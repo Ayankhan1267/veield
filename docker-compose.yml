@@ -1,0 +1,21 @@
+﻿services:
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: veiled
+      POSTGRES_USER: veiled
+      POSTGRES_PASSWORD: veiled_secret
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

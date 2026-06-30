@@ -1,0 +1,14 @@
+﻿import { NextRequest, NextResponse } from 'next/server'
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url)
+  const q = searchParams.get('q') || ''
+  return NextResponse.json({
+    data: {
+      results: [],
+      suggestions: ['Jersey Hijab', 'Chiffon Scarf', 'Silk Hijab'],
+      query: q,
+      total: 0
+    }
+  })
+}
