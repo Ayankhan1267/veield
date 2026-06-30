@@ -21,10 +21,10 @@ fi
 
 # --- Clone / Pull ---
 if [ ! -d /opt/veiled ]; then
-  git clone <your-repo-url> /opt/veiled
+  git clone https://github.com/Ayankhan1267/veield.git /opt/veiled
 fi
 cd /opt/veiled
-git pull origin main
+git pull origin master
 
 # --- Generate DB password if not set ---
 if [ ! -f .env ]; then
